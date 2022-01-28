@@ -1,0 +1,20 @@
+{
+  "android": {
+    "debug": {
+      "keystore": "/home/ben/Android/key.jks",
+      "storePassword": "pausiankim",
+      "alias": "key0",
+      "password" : "pausiankim",
+      "keystoreType": "jks"
+    },
+    "release": {
+      "keystore": "/home/ben/Android/key.jks",
+      "storePassword": "pausiankim",
+      "alias": "key0",
+      "password" : "pausiankim",
+      "keystoreType": "jks"
+    }
+
+
+  }
+}
