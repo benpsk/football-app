@@ -14,7 +14,7 @@
 
     <platform name="android">
         <allow-intent href="market:*" />
-        <icon src="www/assets/img/icon/icon.png"/>
+        <icon src="www/img/icon.png"/>
     </platform>
 
 </widget>

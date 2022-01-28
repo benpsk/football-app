@@ -19,17 +19,54 @@
 
 // Wait for the deviceready event before using any of Cordova's device APIs.
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
-document.addEventListener('deviceready', onDeviceReady, false);
+// document.addEventListener('deviceready', onDeviceReady, false);
 
-document.querySelector('.outro').classList.add('hide');
+// function onDeviceReady() {
 
-function onDeviceReady() {
+//     // Cordova is now initialized. Have fun!
+//     // console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+//     // document.getElementById('deviceready').classList.add('ready');
 
-    // Cordova is now initialized. Have fun!
-    // console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    // document.getElementById('deviceready').classList.add('ready');
+//     if (navigator.connection.type == Connection.NONE) {
+//         navigator.notification.alert('အင်တာနက် ဖွင့်ထားဖို့ လိုပါတယ်ရှင်');
+//     } else {
+//         // window.open('https://gunn-dev.github.io/football-web/');
+//     }
+// }
 
-    if (navigator.connection.type == Connection.NONE) {
-        navigator.notification.alert('အင်တာနက် ဖွင့်ထားဖို့ လိုပါတယ်ရှင်');
+var intro = document.querySelector('.app');
+
+function start() {
+    window.open('https://gunn-dev.github.io/football-web/');
+}
+
+function show() {
+    intro.innerHTML = `
+        <div class="intro">
+            <img src="img/icon.png" alt="Football Live Logo" style="border-radius: 20px;">
+            <p style="color: white">အင်တာနက် ဖွင့်ပေးပါရှင့်</p>
+            <img src="img/dot-loading.gif" style="width: 50px;" alt="loading...">
+        </div>
+    `;
+}
+
+function hide() {
+    intro.innerHTML = '';
+}
+
+window.onload = function(event) {
+    
+    if (!window.navigator.onLine) {
+        show();
+        alert('အင်တာနက် ဖွင့်ထားဖို့ လိုပါတယ်ရှင်');
+        var intervalID = setInterval(() => {
+            if (window.navigator.onLine) {
+                start();
+                hide();
+                clearInterval(intervalID);
+            }
+        }, 1000)
+    } else {
+        start();
     }
 }

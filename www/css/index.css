@@ -1,0 +1,18 @@
+* {
+    box-sizing: content-box;
+}
+
+html, body {
+    height: 100%;
+    background-color:rgb(37, 119, 118);
+}
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.intro {
+    text-align: center;
+}
