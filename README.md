@@ -1,2 +1,2 @@
 # football-app
-Collection of Football Match Live Streams
+Live Streaming Football Link Collection Android app. 
